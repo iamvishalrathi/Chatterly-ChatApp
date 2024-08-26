@@ -16,6 +16,9 @@ mongoose
         console.log(err)
     })
 
+app.use(express.json());
+app.use(cookieParser());
+
 // import routes
 import authRoutes from "./routes/auth.routes.js"
 // import messageRoute from "./routes/message.routes.js"
