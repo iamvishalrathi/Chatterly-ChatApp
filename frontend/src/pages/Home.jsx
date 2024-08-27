@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react"
+import Sidebar from "../component/sidebar/Sidebar"
+// import MessageContainer from "../component/messages/MessageContainer"
 
-const home = () => {
+const Home = () => {
     return (
-        <div>
-            Home
+        <div className="flex sm:h-[450px] md:h-[550px] rounded-lg overflow-hidden bg-gray-200">
+            <Sidebar />
+
+            {/* <MessageContainer /> */}
         </div>
     )
 }
 
-export default home
+export default Home
