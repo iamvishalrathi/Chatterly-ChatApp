@@ -22,12 +22,14 @@ app.use(cookieParser());
 // import routes
 import authRoutes from "./routes/auth.routes.js"
 import messageRoute from "./routes/message.routes.js"
-// import userRoute from "./routes/user.routes.js"
+import userRoute from "./routes/user.routes.js"
 
+//routes
 app.use("/api/auth", authRoutes)
 app.use("/api/messages", messageRoute)
-// app.use("/api/users", userRoute)
+app.use("/api/users", userRoute)
 
+//root
 app.get("/",(req,res)=>{
     res.send("At root");
 });
