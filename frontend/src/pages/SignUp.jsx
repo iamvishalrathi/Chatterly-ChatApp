@@ -1,8 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import GenderCheckbox from "../component/GenderCheckbox";
+import useSignup from "../hooks/useSignup";
 
 const Signup = () => {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+  });
+
+  const { loading, signup } = useSignup()
+
+  const handleCheckboxChange = (gender) => {
+    setFormData({ ...formData, gender });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    await signup(formData)
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-w-96 mx-auto">
       <div className=" w-full p-6 rounded-lg shadow-md bg-gray-200">
@@ -10,7 +31,7 @@ const Signup = () => {
           Signup to
           <span className="text-blue-700"> Chat Application</span>
         </h1>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Username</span>
@@ -20,6 +41,10 @@ const Signup = () => {
               type="text"
               placeholder="Enter Username"
               className="w-full input input-bordered h-10"
+              value={formData.username}
+              onChange={(e) =>
+                setFormData({ ...formData, username: e.target.value })
+              }
             />
           </div>
           <div>
@@ -31,8 +56,13 @@ const Signup = () => {
               type="email"
               placeholder="example@gmail.com"
               className="w-full input input-bordered h-10"
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
           </div>
+
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Password</span>
@@ -42,10 +72,33 @@ const Signup = () => {
               type="password"
               placeholder="Enter Password"
               className="w-full input input-bordered h-10"
+              value={formData.password}
+              onChange={(e) =>
+                setFormData({ ...formData, password: e.target.value })
+              }
             />
           </div>
 
-          <GenderCheckbox/>
+          <div>
+            <label className="label p-2">
+              <span className="text-base label-text">Confirm Password</span>
+            </label>
+
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              className="w-full input input-bordered h-10"
+              value={formData.confirmPassword}
+              onChange={(e) =>
+                setFormData({ ...formData, confirmPassword: e.target.value })
+              }
+            />
+          </div>
+
+          <GenderCheckbox
+            onCheckboxChange={handleCheckboxChange}
+            selectedGender={formData.gender}
+          />
 
           <Link
             to={"/login"}
@@ -55,9 +108,7 @@ const Signup = () => {
           </Link>
 
           <div>
-            <button
-              className="btn btn-block btn-sm mt-2 bg-blue-700 font-bold text-white"
-            >
+            <button className="btn btn-block btn-sm mt-2 bg-blue-700 font-bold text-white">
               Signup
             </button>
           </div>
