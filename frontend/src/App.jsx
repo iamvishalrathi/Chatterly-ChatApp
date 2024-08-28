@@ -12,11 +12,11 @@ const App = () => {
       <Routes>
         <Route
           path="/"
-          element={<Home />}
+          element={authUser ? <Home /> : <Navigate to={"/login"} />}
         />
         <Route
           path="/login"
-          element={<Login />}
+          element={authUser ? <Navigate to={"/"} /> : <Login />}
         />
         <Route
           path="/signup"

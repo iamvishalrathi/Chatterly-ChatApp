@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import GenderCheckbox from "../component/GenderCheckbox";
-import useSignup from "../hooks/useSignup";
+import React, { useState } from "react"
+import GenderCheckbox from "../component/GenderCheckbox"
+import { Link } from "react-router-dom"
+import useSignup from "../hooks/useSignup"
 
-const Signup = () => {
+const SignUp = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
     password: "",
     confirmPassword: "",
     gender: "",
-  });
+  })
 
   const { loading, signup } = useSignup()
 
   const handleCheckboxChange = (gender) => {
-    setFormData({ ...formData, gender });
-  };
+    setFormData({ ...formData, gender })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -31,6 +31,7 @@ const Signup = () => {
           Signup to
           <span className="text-blue-700"> Chat Application</span>
         </h1>
+
         <form onSubmit={handleSubmit}>
           <div>
             <label className="label p-2">
@@ -47,6 +48,7 @@ const Signup = () => {
               }
             />
           </div>
+
           <div>
             <label className="label p-2">
               <span className="text-base label-text">Email</span>
@@ -108,14 +110,21 @@ const Signup = () => {
           </Link>
 
           <div>
-            <button className="btn btn-block btn-sm mt-2 bg-blue-700 font-bold text-white">
-              Signup
+            <button
+              className="btn btn-block btn-sm mt-2 bg-blue-700 font-bold text-white"
+              disabled={loading}
+            >
+              {loading ? (
+                <span className="loading loading-spinner"></span>
+              ) : (
+                "Sign Up"
+              )}
             </button>
           </div>
         </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Signup;
+export default SignUp
