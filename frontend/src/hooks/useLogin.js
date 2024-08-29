@@ -40,11 +40,10 @@ const useLogin = () => {
 
       if (data.error) {
         throw new Error(data.error)
+      } else{
+        localStorage.setItem("user", JSON.stringify(data))
+        setAuthUser(data)
       }
-
-      localStorage.setItem("user", JSON.stringify(data))
-
-      setAuthUser(data)
     } catch (error) {
       toast.error(error.message)
     } finally {

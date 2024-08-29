@@ -64,13 +64,14 @@ const useSignup = () => {
 
       if (data.error) {
         throw new Error(data.error)
-      }
-
+      } else{
         // console.log(data)
 
-      localStorage.setItem("user", JSON.stringify(data))
+        localStorage.setItem("user", JSON.stringify(data))
 
-      setAuthUser(data)
+        setAuthUser(data)
+      }
+
     } catch (error) {
       toast.error(error.message)
     } finally {

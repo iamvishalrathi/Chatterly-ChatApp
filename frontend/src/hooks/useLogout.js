@@ -19,10 +19,10 @@ const useLogout = () => {
 
       if (data.error) {
         throw new Error(data.error)
+      } else{
+        localStorage.removeItem("user")
+        setAuthUser(null)
       }
-
-      localStorage.removeItem("user")
-      setAuthUser(null)
     } catch (error) {
       toast.error(error.message)
     } finally {
