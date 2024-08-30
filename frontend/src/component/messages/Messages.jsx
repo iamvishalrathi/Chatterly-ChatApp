@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react"
 import Message from "./Message"
 import useGetMessages from "../../hooks/useGetMessages"
-// import useListenMessages from "../../hooks/useListenMessages"
+import useListenMessages from "../../hooks/useListenMessages"
 
 const Messages = () => {
   const { messages, loading } = useGetMessages()
 
   // console.log(messages)
 
-  // useListenMessages()
+  useListenMessages()
 
   const lastMessageRef = useRef() //This is a React Hook that returns a 
   // mutable ref object. This ref object has a current property that can hold a 
