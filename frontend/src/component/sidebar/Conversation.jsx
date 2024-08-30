@@ -15,7 +15,7 @@ const Conversation = ({ conversation, lastIndex }) => {
       >
         <div className={`avatar online `}>
           <div className="w-12 rounded-full">
-            <img src={conversation.profilePic} alt="" />
+            <img src={conversation.profilePic} alt="User Avatar" />
           </div>
         </div>
 

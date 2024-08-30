@@ -2,8 +2,9 @@ import express from "express";
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
+import { server, app } from "./socket/socket.js"
 
-const app = express();
+// const app = express();
 dotenv.config();
 
 //Connect Mongo
@@ -36,8 +37,8 @@ app.get("/",(req,res)=>{
 
 //Listening Port
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Listening to port ${PORT}`);
+server.listen(PORT, () => {
+    console.log(`Server listening to port ${PORT}`);
 });
 
 //Error Handler
