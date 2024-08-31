@@ -1,7 +1,7 @@
 # **<img src="https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/public/logo.png" alt="Sample Image" width="25"/> Chatterly**
-Welcome to **Chatterly** !
+Welcome to **Chatterly(Chat App)**!
 
-Chatterly(ChatApp) is a real-time chat application that allows users to communicate with each other in real time. The app features user authentication, a contact list, and a real-time chatting interface. It is built using modern web technologies to provide a seamless and interactive user experience.
+Chatterly(Chat App) is a real-time chat application that allows users to communicate with each other in real time. The app features user authentication, a contact list, and a real-time chatting interface. It is built using modern web technologies to provide a seamless and interactive user experience.
 
 
 ## **Features**
