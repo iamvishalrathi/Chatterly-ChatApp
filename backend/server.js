@@ -3,6 +3,10 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import { server, app } from "./socket/socket.js"
+const path = require('path');
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'build')));
 
 // const app = express();
 dotenv.config();
