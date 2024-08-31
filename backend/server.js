@@ -13,6 +13,9 @@ const __dirname = path.dirname(__filename);
 // const app = express();
 dotenv.config();
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'dist')));
+
 //Connect Mongo
 mongoose
     .connect(process.env.MONGO_URL)
