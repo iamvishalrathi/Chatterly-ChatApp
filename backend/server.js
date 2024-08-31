@@ -6,7 +6,7 @@ import { server, app } from "./socket/socket.js"
 const path = require('path');
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // const app = express();
 dotenv.config();
