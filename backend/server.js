@@ -3,10 +3,12 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import { server, app } from "./socket/socket.js"
-import path from 'path'
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '/dist')));
+// Define __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // const app = express();
 dotenv.config();
@@ -35,9 +37,9 @@ app.use("/api/messages", messageRoute)
 app.use("/api/users", userRoute)
 
 //root
-// // All other routes should return the React app
+// Serve the React app for all other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 //Listening Port
