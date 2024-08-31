@@ -8,8 +8,6 @@ import path from 'path'
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '/dist')));
 
-
-
 // const app = express();
 dotenv.config();
 
@@ -37,7 +35,7 @@ app.use("/api/messages", messageRoute)
 app.use("/api/users", userRoute)
 
 //root
-// All other routes should return the React app
+// // All other routes should return the React app
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/dist', 'index.html'));
 });
