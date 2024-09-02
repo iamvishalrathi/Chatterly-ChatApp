@@ -41,10 +41,12 @@ const useLogin = () => {
       if (data.error) {
         throw new Error(data.error)
       } else{
+        console.log("setting local")
         localStorage.setItem("user", JSON.stringify(data))
         setAuthUser(data)
       }
     } catch (error) {
+      console.log("toast error")
       toast.error(error.message)
     } finally {
       setLoading(false)
