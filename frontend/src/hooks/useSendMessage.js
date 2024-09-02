@@ -27,9 +27,9 @@ const useSendMessage = () => {
       if (data.error) {
         throw new Error(data.error)
       } else{
-        setMessages([...messages, data])
         const sound = new Audio(notificationSound)
         sound.play()
+        setMessages([...messages, data])
       }
     } catch (error) {
       toast.error(error.message)
