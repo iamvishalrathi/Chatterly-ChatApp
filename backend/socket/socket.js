@@ -8,7 +8,7 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://chatterly-hp0h.onrender.com"],
+    origin: [process.env.SOCKET_URL],
     methods: ["GET", "POST"],
   },
 })

@@ -3,8 +3,8 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import cookieParser from "cookie-parser"
 import { server, app } from "./socket/socket.js"
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 // Define __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
