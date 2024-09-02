@@ -1,6 +1,7 @@
 import { useState } from "react"
 import useConversation from "../zustand/useConversation"
 import toast from "react-hot-toast"
+import notificationSound from "../assets/sounds/notification.mp3"
 
 const useSendMessage = () => {
   const [loading, setLoading] = useState(false)
@@ -27,6 +28,8 @@ const useSendMessage = () => {
         throw new Error(data.error)
       } else{
         setMessages([...messages, data])
+        const sound = new Audio(notificationSound)
+        sound.play()
       }
     } catch (error) {
       toast.error(error.message)
