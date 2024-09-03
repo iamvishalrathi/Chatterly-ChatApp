@@ -85,7 +85,7 @@ export const logout = (req, res) => {
     res.clearCookie("access_token")
 
     res.status(200).json({
-      message: "User has been loggged out successfully!",
+      message: "Loggged out successfully!",
     })
   } catch (error) {
     next(error)

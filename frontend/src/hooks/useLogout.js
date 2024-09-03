@@ -20,8 +20,18 @@ const useLogout = () => {
       if (data.statusCode) {
         throw new Error(data.message)
       }
-        localStorage.removeItem("user")
-        setAuthUser(null)
+      localStorage.removeItem("user")
+
+      toast(data.message, {
+        duration: 3000, // Duration in milliseconds
+        style: {
+          background: "green",
+          color: '#fff',
+        },
+        icon: '🔓',
+      });
+      
+      setAuthUser(null)
     } catch (error) {
       toast.error(error.message)
     } finally {
