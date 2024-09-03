@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 //Connect Mongo
 mongoose
@@ -41,7 +41,7 @@ app.use("/api/users", userRoute)
 //root
 // Serve the React app for all other routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
 //Listening Port

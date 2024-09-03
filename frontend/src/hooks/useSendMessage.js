@@ -21,15 +21,15 @@ const useSendMessage = () => {
           body: JSON.stringify({ message }),
         }
       )
+      const sound = new Audio(notificationSound)
+      sound.play()
 
       const data = await res.json()
 
       if (data.statusCode) {
         throw new Error(data.message)
       }
-        const sound = new Audio(notificationSound)
-        sound.play()
-        setMessages([...messages, data])
+      setMessages([...messages, data])
     } catch (error) {
       toast.error(error.message)
     } finally {
