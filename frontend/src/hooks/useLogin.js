@@ -37,12 +37,11 @@ const useLogin = () => {
       })
 
       const data = await res.json()
-      if (!data.success) {
+      if (data.statusCode) {
         throw new Error(data.message)
-      } else {
+      }
         localStorage.setItem("user", JSON.stringify(data))
         setAuthUser(data)
-      }
     } catch (error) {
       toast.error(error.message)
     } finally {

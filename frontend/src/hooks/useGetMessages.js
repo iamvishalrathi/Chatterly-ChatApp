@@ -15,13 +15,11 @@ const useGetMessages = () => {
 
         const data = await res.json()
 
-        if (data.error) {
-          throw new Error(data.error)
+        if (data.statusCode) {
+          throw new Error(data.message)
         }
-        else {
           setMessages(data) //We didn't de-constructed "messages" as
           //we don't wanna call useEffect() on storing fetched data
-        }
       } catch (error) {
         toast.error(error.message)
       } finally {

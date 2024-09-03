@@ -14,11 +14,10 @@ const useGetConversations = () => {
 
         const data = await res.json()
 
-        if (data.error) {
-          throw new Error(data.error)
-        } else{
-          setConversations(data)
+        if (data.statusCode) {
+          throw new Error(data.message)
         }
+        setConversations(data)    
       } catch (error) {
         toast.error(error.message)
       } finally {

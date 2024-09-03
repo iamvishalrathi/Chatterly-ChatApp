@@ -17,12 +17,11 @@ const useLogout = () => {
 
       const data = await res.json()
 
-      if (data.error) {
-        throw new Error(data.error)
-      } else{
+      if (data.statusCode) {
+        throw new Error(data.message)
+      }
         localStorage.removeItem("user")
         setAuthUser(null)
-      }
     } catch (error) {
       toast.error(error.message)
     } finally {

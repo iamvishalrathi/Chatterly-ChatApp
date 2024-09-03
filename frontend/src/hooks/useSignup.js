@@ -62,15 +62,11 @@ const useSignup = () => {
 
       const data = await res.json()
 
-      if (data.error) {
-        throw new Error(data.error)
-      } else{
-        // console.log(data)
-
-        localStorage.setItem("user", JSON.stringify(data))
-
-        setAuthUser(data)
+      if (data.statusCode) {
+        throw new Error(data.message)
       }
+      localStorage.setItem("user", JSON.stringify(data))
+      setAuthUser(data)
 
     } catch (error) {
       toast.error(error.message)

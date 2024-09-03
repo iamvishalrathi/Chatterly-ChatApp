@@ -24,13 +24,12 @@ const useSendMessage = () => {
 
       const data = await res.json()
 
-      if (data.error) {
-        throw new Error(data.error)
-      } else{
+      if (data.statusCode) {
+        throw new Error(data.message)
+      }
         const sound = new Audio(notificationSound)
         sound.play()
         setMessages([...messages, data])
-      }
     } catch (error) {
       toast.error(error.message)
     } finally {

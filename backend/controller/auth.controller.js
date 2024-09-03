@@ -6,12 +6,15 @@ import { errorHandler } from "../utils/error.js"
 export const signup = async (req, res, next) => {
   const { username, email, password, confirmPassword, gender } = req.body
 
-  let validUser
-
-  validUser = await User.findOne({ email })
+  let validUser = await User.findOne({ username })
+  let validUserEmail = await User.findOne({ email })
 
   if (validUser) {
     return next(errorHandler(400, "User already exists"))
+  }
+
+  if (validUserEmail) {
+    return next(errorHandler(400, "Email Id already exists"))
   }
 
   if (password !== confirmPassword) {
