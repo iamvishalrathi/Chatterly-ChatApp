@@ -1,6 +1,7 @@
 import { useSocketContext } from "../../context/SocketContext"
 import useConversation from "../../zustand/useConversation"
-import defaultPic from "../../assets/user/boy.png"
+import defaultMale from "../../assets/user/boy.png"
+import defaultFemale from "../../assets/user/girl.png"
 import { useEffect, useState } from "react"
 
 const Conversation = ({ conversation, lastIndex }) => {
@@ -12,6 +13,7 @@ const Conversation = ({ conversation, lastIndex }) => {
   const isOnline = onlineUsers.includes(conversation._id)
 
   //Set Image
+  const defaultPic = conversation.gender == "male" ? defaultMale : defaultFemale
   const [imageSrc, setImageSrc] = useState(defaultPic);
 
   useEffect(() => {
