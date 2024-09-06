@@ -1,4 +1,3 @@
-import userAvatar from "../../assets/user.png"
 import { useSocketContext } from "../../context/SocketContext"
 import useConversation from "../../zustand/useConversation"
 import defaultPic from "../../assets/user/boy.png"
