@@ -1,6 +1,9 @@
 import { useAuthContext } from "../../context/AuthContext"
 import useConversation from "../../zustand/useConversation"
 import { formatTime } from "../../utils/formatTime"
+import defaultMale from "../../assets/user/boy.png"
+import defaultFemale from "../../assets/user/girl.png"
+import { useEffect, useState } from "react"
 
 const Message = ({ message }) => {
   // console.log(message)
@@ -12,9 +15,44 @@ const Message = ({ message }) => {
 
   const chatClassName = messageFromMe ? "chat-end" : "chat-start"
 
+  //Set Image
+  const senderDefaultPic = authUser.gender == "male" ? defaultMale : defaultFemale
+  const receiverDefaultPic = selectedConversation.gender == "male" ? defaultMale : defaultFemale
+
+  //Profile Image
   const profilePic = messageFromMe
     ? authUser.profilePic
     : selectedConversation?.profilePic
+
+  //Default Image
+  const defaultPic = messageFromMe
+    ? senderDefaultPic
+    : receiverDefaultPic
+
+  const [imageSrc, setImageSrc] = useState(defaultPic);
+
+  useEffect(() => {
+    // Create an image object to handle loading and error events
+    const img = new Image();
+    img.src = profilePic;
+
+    img.onload = () => {
+      // If the image loads successfully, update the source
+      setImageSrc(profilePic);
+    };
+
+    img.onerror = () => {
+      // If the image fails to load, keep the default image
+      setImageSrc(defaultPic);
+    };
+
+    // Cleanup function to avoid memory leaks
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, []);
+
 
   const msgBgColor = messageFromMe ? "bg-green-500" : ""
 
@@ -24,7 +62,7 @@ const Message = ({ message }) => {
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
         <div className="w-10 rounded-full">
-          <img src={profilePic} alt="User Avatar" />
+          <img src={imageSrc} alt="User Avatar" />
         </div>
       </div>
 
