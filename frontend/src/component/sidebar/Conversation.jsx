@@ -1,7 +1,7 @@
 import { useSocketContext } from "../../context/SocketContext"
 import useConversation from "../../zustand/useConversation"
 import defaultPic from "../../assets/user/boy.png"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Conversation = ({ conversation, lastIndex }) => {
   const { selectedConversation, setSelectedConversation } = useConversation()
@@ -11,14 +11,30 @@ const Conversation = ({ conversation, lastIndex }) => {
   const { onlineUsers } = useSocketContext()
   const isOnline = onlineUsers.includes(conversation._id)
 
-  //Avatar Image
-  const [imageSrc, setImageSrc] = useState(conversation.profilePic || defaultPic);
+  //Set Image
+  const [imageSrc, setImageSrc] = useState(defaultPic);
 
-  // Handle image loading error
-  const handleError = () => {
-    setImageSrc(defaultPic);
-  };
+  useEffect(() => {
+    // Create an image object to handle loading and error events
+    const img = new Image();
+    img.src = conversation.profilePic;
 
+    img.onload = () => {
+      // If the image loads successfully, update the source
+      setImageSrc(conversation.profilePic);
+    };
+
+    img.onerror = () => {
+      // If the image fails to load, keep the default image
+      setImageSrc(defaultPic);
+    };
+
+    // Cleanup function to avoid memory leaks
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
+  }, []);
 
   return (
     <>
@@ -31,8 +47,7 @@ const Conversation = ({ conversation, lastIndex }) => {
           <div className="w-12 rounded-full">
             <img
               src={imageSrc}
-              alt="User Avatar"
-              onError={handleError} // Fallback to default image on error
+              alt="Profile"
             />
           </div>
         </div>
