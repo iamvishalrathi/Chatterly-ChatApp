@@ -16,8 +16,8 @@ const Message = ({ message }) => {
   const chatClassName = messageFromMe ? "chat-end" : "chat-start"
 
   //Set Image
-  const senderDefaultPic = authUser.gender == "male" ? defaultMale : defaultFemale
-  const receiverDefaultPic = selectedConversation.gender == "male" ? defaultMale : defaultFemale
+  const senderDefaultPic = authUser.gender === "male" ? defaultMale : defaultFemale
+  const receiverDefaultPic = selectedConversation.gender === "male" ? defaultMale : defaultFemale
 
   //Profile Image
   const profilePic = messageFromMe
