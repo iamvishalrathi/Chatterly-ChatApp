@@ -76,6 +76,7 @@ export const login = async (req, res, next) => {
       username: validUser.username,
       email: validUser.email,
       profilePic: validUser.profilePic,
+      gender: validUser.gender,
     })
   } catch (error) {
     next(error)
