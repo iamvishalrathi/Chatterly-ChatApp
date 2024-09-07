@@ -1,0 +1,3 @@
+To connect to localhost:
+1. SOCKET_URL=http://localhost:5173 [backend/.env]
+2. target: "http://localhost:3000" [frontend/vite.config.js]
