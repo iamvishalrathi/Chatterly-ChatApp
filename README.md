@@ -31,7 +31,7 @@
 
 - [📍 Overview](#-overview)
 - [👾 Features](#-features)
-- [🔍 Preview the Website](#-preview-the-website)
+- [🔍 Website Preview](#-website-preview)
 - [📂 Repository Structure](#-repository-structure)
 - [🧩 Modules](#-modules)
 - [🚀 Getting Started](#-getting-started)
@@ -40,7 +40,7 @@
     - [🤖 Usage](#-usage)
     - [🧪 Tests](#-tests)
 - [📞 Contact](#-contact)
-
+  
 ---
 
 ## 📍 Overview
@@ -55,11 +55,14 @@
 
 ---
 
-## **Preview the Website**
+## 🔍 Website Preview
 
 You can explore Chatterly live by visiting the website:
 
 [**Chatterly - Preview the App**](https://chatterly-hp0h.onrender.com)
+
+### **📸 Screenshot**
+![image](https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/src/assets/sns.png)
 
 ---
 
