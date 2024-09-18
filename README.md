@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/public/logo.png" width="25" alt="CHATTERLY-logo">
+  <img src="https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/public/logo.png" width="50" alt="CHATTERLY-logo">
 </p>
     <h1 align="center">CHATTERLY(CHAT APP)</h1>
 <p align="center">
