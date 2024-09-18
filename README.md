@@ -3,9 +3,6 @@
 </p>
     <h1 align="center">CHATTERLY(CHAT APP)</h1>
 <p align="center">
-    <em><code>❯ REPLACE-ME</code></em>
-</p>
-<p align="center">
 	<img src="https://img.shields.io/github/license/iamvishalrathi/Chatterly?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/iamvishalrathi/Chatterly?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
 	<img src="https://img.shields.io/github/languages/top/iamvishalrathi/Chatterly?style=flat&color=0080ff" alt="repo-top-language">
@@ -57,6 +54,14 @@
 ## 👾 Features
 
 <code>❯ REPLACE-ME</code>
+
+---
+
+## **Preview the Website**
+
+You can explore Chatterly live by visiting the website:
+
+[**Chatterly - Preview the App**](https://chatterly-hp0h.onrender.com)
 
 ---
 
