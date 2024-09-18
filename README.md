@@ -64,7 +64,7 @@ You can explore Chatterly live by visiting the website:
 
 [**Chatterly - Preview the App**](https://chatterly-hp0h.onrender.com)
 
-### **📸 Screenshot**
+### 📸 Screenshot
 ![image](https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/src/assets/sns.png)
 
 ---
