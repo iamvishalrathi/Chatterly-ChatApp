@@ -31,6 +31,7 @@
 
 - [📍 Overview](#-overview)
 - [👾 Features](#-features)
+- [🔍 Preview the Website](#-preview-the-website)
 - [📂 Repository Structure](#-repository-structure)
 - [🧩 Modules](#-modules)
 - [🚀 Getting Started](#-getting-started)
@@ -38,10 +39,7 @@
     - [📦 Installation](#-installation)
     - [🤖 Usage](#-usage)
     - [🧪 Tests](#-tests)
-- [📌 Project Roadmap](#-project-roadmap)
-- [🤝 Contributing](#-contributing)
-- [🎗 License](#-license)
-- [🙌 Acknowledgments](#-acknowledgments)
+- [📞 Contact](#-contact)
 
 ---
 
