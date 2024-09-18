@@ -45,13 +45,16 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+Chatterly(Chat App) is a real-time chat application that allows users to communicate with each other in real-time. The app features user authentication, a contact list, and a real-time chatting interface. It is built using modern web technologies to provide a seamless and interactive user experience.
 
 ---
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+- **User Authentication:** Secure login and signup functionality.
+- **Contact List:** View and manage your contacts.
+- **Search Contacts:** Easily find contacts with the search feature.
+- **Real-Time Chatting:** Engage in instant messaging with real-time updates.
 
 ---
 
