@@ -50,7 +50,7 @@ Open your web browser and navigate to http://localhost:5173/.
 You're now ready to explore and use the Chatterly!
 
 
-## **Technologies Used**
+## **⚙️ Tech Stack**
 - **Frontend:**
   - **React:** For building the user interface.
   - **Socket.IO-client:** To handle real-time communication on the client side.
