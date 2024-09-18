@@ -2,8 +2,7 @@
   <img src="https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/public/logo.png" width="25" alt="CHATTERLY-logo">
 </p>
 <p align="center">
-    <h1 align="center">[CHATTERLY(CHAT APP)](https://chatterly-hp0h.onrender.com)
-</h1>
+    [CHATTERLY(CHAT APP)](https://chatterly-hp0h.onrender.com)
 </p>
 <p align="center">
     <em><code>❯ REPLACE-ME</code></em>
