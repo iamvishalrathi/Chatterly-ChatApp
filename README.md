@@ -2,6 +2,10 @@
   <img src="https://github.com/iamvishalrathi/Chatterly/blob/main/frontend/public/logo.png" width="50" alt="CHATTERLY-logo">
 </p>
     <h1 align="center">CHATTERLY(CHAT APP)</h1>
+    
+<p align="center">
+    <em><code><a href="https://chatterly-hp0h.onrender.com" target="_blank" >❯ Live</a></code></em>
+</p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/iamvishalrathi/Chatterly?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/iamvishalrathi/Chatterly?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
