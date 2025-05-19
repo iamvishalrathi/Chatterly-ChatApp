@@ -46,9 +46,41 @@ app.get('*', (req, res) => {
 
 //Listening Port
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-    console.log(`Server listening to port ${PORT}`);
-});
+
+const startServer = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO_URL);
+        let currentPort = PORT;
+
+        const tryPort = (port) => {
+            return new Promise((resolve, reject) => {
+                server.listen(port)
+                    .once('listening', () => {
+                        console.log(`Server Running on Port ${port}`);
+                        console.log('MongoDB Connected!');
+                        resolve(true);
+                    })
+                    .once('error', (err) => {
+                        if (err.code === 'EADDRINUSE') {
+                            server.close();
+                            resolve(false);
+                        } else {
+                            reject(err);
+                        }
+                    });
+            });
+        };
+
+        // Try ports incrementally until we find an available one
+        while (!(await tryPort(currentPort))) {
+            currentPort++;
+        }
+    } catch (error) {
+        console.log('Error starting server:', error.message);
+    }
+};
+
+startServer();
 
 //Error Handler
 app.use((err, req, res, next) => {
