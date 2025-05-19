@@ -1,4 +1,4 @@
 PORT=3000
-MONGO_URL="your_mongodb_connection_string"
+MONGO_URL="mongodb+srv://<username>:<password>@<cluster-address>/<database>?retryWrites=true&w=majority&appName=<appName>"
 JWT_SECRET="your_jwt_secret_key"
 SOCKET_URL="your_socket_server_url"
